@@ -1,7 +1,7 @@
 # Selection sort in Python
 
 
-def selectionSort(array, size):
+def selectrion_sort(array, size):
     for step in range(size):
         min_idx = step
 
@@ -18,6 +18,6 @@ def selectionSort(array, size):
 
 data = [-2, 45, 0, 11, -9]
 size = len(data)
-selectionSort(data, size)
+selectrion_sort(data, size)
 print('Sorted Array in Ascending Order:')
 print(data)

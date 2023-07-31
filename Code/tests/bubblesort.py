@@ -1,6 +1,6 @@
 # Python program for implementation of Bubble Sort
 
-def nathan_bubbleSort(item):
+def bubble_sort(item):
     n = len(item)
     # optimize code, so if the array is already sorted, it doesn't need
     # to go through the entire process
@@ -28,7 +28,7 @@ def nathan_bubbleSort(item):
 # Driver code to test above
 item = [64, 34, 25, 12, 22, 11, 90]
 
-nathan_bubbleSort(item)
+bubble_sort(item)
 
 print("Sorted array is:")
 for i in range(len(item)):
