@@ -1,34 +1,35 @@
-import pandas as pd
-#Generic bubble sort
-def bubble_sort(item):
-    n = len(item)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if item[j]['Price'] > item[j + 1]['Price']:
-                item[j], item[j + 1] = item[j + 1], item[j]
-#Read cvs file function
-def read_csv(filepath, columns):
-    dataframe = pd.read_csv(filepath, usecols=columns)
-    return dataframe
+# Python program for implementation of Bubble Sort
 
-# Column names you want to read from the CSV file
-columns = [0,4]
-# Escaping the backslashes
-filepath = 'D:\Python_Excel_Task\DiamondValues.csv'
-# Read the specified columns from the CSV file into a DataFrame
-dataframe = read_csv(filepath, columns)
-# Print the original CSV data
-print("CSV Data: ")
-print(dataframe)
-print("")
-# Convert DataFrame to list of dictionaries to perform bubble sort
-data_list = dataframe.to_dict('records') #making a list / dictinary value list
-print(" ")
-print(data_list)
-print(" ")
-# Sort the data using bubble sort based on the 'Price' column
-bubble_sort(data_list)
-# Convert the sorted list of dictionaries back to a DataFrame
-sorted_dataframe = pd.DataFrame(data_list)
-print("Bubble Sorted Data:")
-print(sorted_dataframe)
+def nathan_bubbleSort(item):
+    n = len(item)
+    # optimize code, so if the array is already sorted, it doesn't need
+    # to go through the entire process
+    swapped = False
+    # Traverse through all array elements
+    for i in range(n - 1):
+        # range(n) also work but outer loop will
+        # repeat one time more than needed.
+        # Last i elements are already in place
+        for j in range(0, n - i - 1):
+
+            # traverse the array from 0 to n-i-1
+            # Swap if the element found is greater
+            # than the next element
+            if item[j] > item[j + 1]:
+                swapped = True
+                item[j], item[j + 1] = item[j + 1], item[j]
+
+        if not swapped:
+            # if we haven't needed to make a single swap, we
+            # can just exit the main loop.
+            return
+
+
+# Driver code to test above
+item = [64, 34, 25, 12, 22, 11, 90]
+
+nathan_bubbleSort(item)
+
+print("Sorted array is:")
+for i in range(len(item)):
+    print("% d" % item[i], end=" ")
