@@ -1,4 +1,4 @@
-# Python program for implementation of Bubble Sort
+#Python program for implementation of Bubble Sort
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
